@@ -76,6 +76,13 @@ export default function Header() {
                 Home
               </Disclosure.Button>
               {/* Add here your custom menu elements */}
+              <Disclosure.Button
+                as="a"
+                href="campaign/new"
+                className="block border-l-4 border-black py-2 pl-3 pr-4 text-base font-medium text-black"
+              >
+                Add campaign
+              </Disclosure.Button>
             </div>
           </Disclosure.Panel>
         </>

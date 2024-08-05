@@ -26,5 +26,6 @@
   "keywords": [
     "celo-composer",
     "celo"
-  ]
+  ],
+  "packageManager": "yarn@4.4.0"
 }
