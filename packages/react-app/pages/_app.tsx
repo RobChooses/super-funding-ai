@@ -40,7 +40,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider>
+        <RainbowKitProvider coolMode>
           <Layout>
             <Component {...pageProps} />
           </Layout>

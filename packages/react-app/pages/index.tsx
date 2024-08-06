@@ -1,5 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import PrimaryButton from "@/components/Button";
+import { BackgroundBeams } from "@/components/Ui/BackgroundBeams";
+import GradualSpacing from "@/components/Ui/GradualSpaceing";
+import ShinyButton from "@/components/Ui/ShinyButton";
 import { useWeb3 } from "@/contexts/useWeb3";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -73,85 +76,99 @@ export default function Home() {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center">
-            {!address && (
-                <div className="h1">Please install Metamask and connect.</div>
-            )}
-            {address && (
-                <div className="h1">
-                    There you go... a canvas for your next Minipay project!
-                </div>
-            )}
+      <div className="h-screen w-screen bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
+        <div className="max-w-2xl mx-auto p-4 flex flex-col items-center justify-center gap-2">
+          <ShinyButton text="Get started" />
+          <GradualSpacing
+            className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-[#8066f4]  text-center font-sans font-bold"
+            text="Super Funding-Ai"
+          />
 
-            {address && (
-                <>
-                    <div className="h2 text-center">
-                        Your address:{" "}
-                        <span className="font-bold text-sm">{address}</span>
-                    </div>
-                    {tx && (
-                        <p className="font-bold mt-4">
-                            Tx Completed:{" "}
-                            {(tx.transactionHash as string).substring(0, 6)}
-                            ...
-                            {(tx.transactionHash as string).substring(
-                                tx.transactionHash.length - 6,
-                                tx.transactionHash.length
-                            )}
-                        </p>
-                    )}
-                    <div className="w-full px-3 mt-7">
-                        <PrimaryButton
-                            loading={signingLoading}
-                            onClick={sendingCUSD}
-                            title="Send 0.1 cUSD to your own address"
-                            widthFull
-                        />
-                    </div>
-
-                    <div className="w-full px-3 mt-6">
-                        <PrimaryButton
-                            loading={cUSDLoading}
-                            onClick={signMessage}
-                            title="Sign a Message"
-                            widthFull
-                        />
-                    </div>
-
-                    {userOwnedNFTs.length > 0 ? (
-                        <div className="flex flex-col items-center justify-center w-full mt-7">
-                            <p className="font-bold">My NFTs</p>
-                            <div className="w-full grid grid-cols-2 gap-3 mt-3 px-2">
-                                {userOwnedNFTs.map((tokenURI, index) => (
-                                    <div
-                                        key={index}
-                                        className="p-2 border-[3px] border-colors-secondary rounded-xl"
-                                    >
-                                        <Image
-                                            alt="MINIPAY NFT"
-                                            src={tokenURI}
-                                            className="w-[160px] h-[200px] object-cover"
-                                            width={160}
-                                            height={200}
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ) : (
-                        <div className="mt-5">You do not have any NFTs yet</div>
-                    )}
-
-                    <div className="w-full px-3 mt-5">
-                        <PrimaryButton
-                            loading={nftLoading}
-                            onClick={mintNFT}
-                            title="Mint Minipay NFT"
-                            widthFull
-                        />
-                    </div>
-                </>
-            )}
+          <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
+            Lorem Ipsum
+          </p>
         </div>
+        <BackgroundBeams />
+      </div>
+      // <div className="flex flex-col justify-center items-center">
+      //     {!address && (
+      //         <div className="h1">Please install Metamask and connect.</div>
+      //     )}
+      //     {address && (
+      //         <div className="h1">
+      //             There you go... a canvas for your next Minipay project!
+      //         </div>
+      //     )}
+
+      //     {address && (
+      //         <>
+      //             <div className="h2 text-center">
+      //                 Your address:{" "}
+      //                 <span className="font-bold text-sm">{address}</span>
+      //             </div>
+      //             {tx && (
+      //                 <p className="font-bold mt-4">
+      //                     Tx Completed:{" "}
+      //                     {(tx.transactionHash as string).substring(0, 6)}
+      //                     ...
+      //                     {(tx.transactionHash as string).substring(
+      //                         tx.transactionHash.length - 6,
+      //                         tx.transactionHash.length
+      //                     )}
+      //                 </p>
+      //             )}
+      //             <div className="w-full px-3 mt-7">
+      //                 <PrimaryButton
+      //                     loading={signingLoading}
+      //                     onClick={sendingCUSD}
+      //                     title="Send 0.1 cUSD to your own address"
+      //                     widthFull
+      //                 />
+      //             </div>
+
+      //             <div className="w-full px-3 mt-6">
+      //                 <PrimaryButton
+      //                     loading={cUSDLoading}
+      //                     onClick={signMessage}
+      //                     title="Sign a Message"
+      //                     widthFull
+      //                 />
+      //             </div>
+
+      //             {userOwnedNFTs.length > 0 ? (
+      //                 <div className="flex flex-col items-center justify-center w-full mt-7">
+      //                     <p className="font-bold">My NFTs</p>
+      //                     <div className="w-full grid grid-cols-2 gap-3 mt-3 px-2">
+      //                         {userOwnedNFTs.map((tokenURI, index) => (
+      //                             <div
+      //                                 key={index}
+      //                                 className="p-2 border-[3px] border-colors-secondary rounded-xl"
+      //                             >
+      //                                 <Image
+      //                                     alt="MINIPAY NFT"
+      //                                     src={tokenURI}
+      //                                     className="w-[160px] h-[200px] object-cover"
+      //                                     width={160}
+      //                                     height={200}
+      //                                 />
+      //                             </div>
+      //                         ))}
+      //                     </div>
+      //                 </div>
+      //             ) : (
+      //                 <div className="mt-5">You do not have any NFTs yet</div>
+      //             )}
+
+      //             <div className="w-full px-3 mt-5">
+      //                 <PrimaryButton
+      //                     loading={nftLoading}
+      //                     onClick={mintNFT}
+      //                     title="Mint Minipay NFT"
+      //                     widthFull
+      //                 />
+      //             </div>
+      //         </>
+      //     )}
+      // </div>
     );
 }
