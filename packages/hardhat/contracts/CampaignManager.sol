@@ -137,6 +137,15 @@ contract CampaignManager {
         emit InvestmentMade(_campaignId, msg.sender, _amount);
     }
 
+    // Function to list all campaigns
+    function listCampaigns() public view returns (Campaign[] memory) {
+        Campaign[] memory allCampaigns = new Campaign[](campaignIdCounter);
+        for (uint256 i = 1; i <= campaignIdCounter; i++) {
+            allCampaigns[i - 1] = campaigns[i];
+        }
+        return allCampaigns;
+    }
+
     // Function to retrieve the next prompt for attestation
     function getNextPrompt(
         uint256 _campaignId
