@@ -76,10 +76,17 @@ export default function Header() {
               {/* Add here your custom menu elements */}
               <Disclosure.Button
                 as="a"
-                href="campaign/new"
+                href="create-project"
                 className="block border-l-4 border-white py-2 pl-3 pr-4 text-base font-medium text-white"
               >
-                Add campaign
+                Create project
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="attest-prompt"
+                className="block border-l-4 border-white py-2 pl-3 pr-4 text-base font-medium text-white"
+              >
+                Attest prompt
               </Disclosure.Button>
             </div>
           </Disclosure.Panel>
