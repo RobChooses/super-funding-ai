@@ -200,7 +200,7 @@ export function AttestPromptCard() {
               ) : result ? (
                 "Start Over"
               ) : (
-                "Verify prompt"
+                "Attest prompt"
               )}
             </Button>
     </Container>

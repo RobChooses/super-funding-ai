@@ -19,17 +19,17 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     return (
       
     <div className="max-w-[80%] w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-black border-[1px] ">
-      <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
+      <h2 className="font-bold text-xl text-white dark:text-neutral-200">
         Create a Project
       </h2>
-      <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-        Lorem Ipsum
+      <p className="text-white text-sm max-w-sm mt-2 dark:text-neutral-300">
+        Enter details of your project
       </p>
 
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="projectName">Name of the Project</Label>
+            <Label htmlFor="projectName" className=" text-white">Project Name</Label>
             <Input
               id="projectName"
               placeholder="Enter Project name"
@@ -37,31 +37,31 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
             />
           </LabelInputContainer>
           <LabelInputContainer>
-            <Label htmlFor="projectLogo">Project Logo</Label>
+            <Label htmlFor="projectLogo" className=" text-white">Project Logo</Label>
             <Input id="projectLogo" type="file" />
           </LabelInputContainer>
           <LabelInputContainer>
-            <Label htmlFor="tokenSymbol">Token Symbol</Label>
+            <Label htmlFor="tokenSymbol" className=" text-white">Token Symbol</Label>
             <Input id="tokenSymbol" type="file" />
           </LabelInputContainer>
         </div>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 mb-4">
           <LabelInputContainer className=" flex-1">
-            <Label htmlFor="category">Category</Label>
+            <Label htmlFor="category" className=" text-white">Category</Label>
             <Input id="category" placeholder="Enter Category" type="text" />
           </LabelInputContainer>
           <LabelInputContainer className="flex-1">
-            <Label htmlFor="amount">How much do you want to raise? </Label>
+            <Label htmlFor="amount" className=" text-white">How much do you want to raise in cUSD? </Label>
             <Input id="amount" placeholder="Amount" type="number" />
           </LabelInputContainer>
         </div>
         <LabelInputContainer className="flex-1 mb-4">
-          <Label htmlFor="description">Description </Label>
+          <Label htmlFor="description" className=" text-white">Description </Label>
           <Input id="description" placeholder="Description" type="textarea" />
         </LabelInputContainer>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 mb-4">
           <LabelInputContainer className="flex-1">
-            <Label htmlFor="date-range">Timeline </Label>
+            <Label htmlFor="date-range" className=" text-white">Timeline </Label>
             <DatePicker
               value={values}
               onChange={setValues}
@@ -76,7 +76,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
             />
           </LabelInputContainer>
           <LabelInputContainer className=" flex-1">
-            <Label htmlFor="url">URL</Label>
+            <Label htmlFor="url" className=" text-white">URL</Label>
             <Input id="url" placeholder="url" type="text" />
           </LabelInputContainer>
         </div>
