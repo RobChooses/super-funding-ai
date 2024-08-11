@@ -4,7 +4,7 @@ import { MemorySaver } from "@langchain/langgraph";
 import { HumanMessage } from "@langchain/core/messages";
 import { createReactAgent } from "@langchain/langgraph/prebuilt";
 
-type ModelResponseObject = {
+export type ModelResponseObject = {
   validity: string;
   critique: string;
 };
@@ -28,10 +28,15 @@ export async function getRespFromLLM(prompt: string) {
 
   console.log('## step 4');
 
+  let llmPrompt = "You are to verify the following provided prompt. Your job is to make the search and opine on how true it may or may not be. Your critique should be 1-4 sentences max. the JSON schema should be { validity: 'true'|'false'|'misleading|'invalid'|'unsure', critique: string }. If the input is not a statement, then return invalid. ";
+  llmPrompt = llmPrompt + "The prompt is '" + prompt + "'";
+
   const agentFinalState = await agent.invoke(
-    { messages: [new HumanMessage(prompt)] },
+    { messages: [new HumanMessage(llmPrompt)] },
     { configurable: { thread_id: "42" } },
   );
+
+  const model = "GPT-3.5"
 
   console.log('## step 5');
 
@@ -74,7 +79,7 @@ export async function getRespFromLLM(prompt: string) {
 
 //   const result = completion.choices[0].message.content;
 
-  // const modelResponseObject: ModelResponseObject = JSON.parse(result!);
-  // return { model, modelResponseObject };
-  return { result }
+  const modelResponseObject: ModelResponseObject = JSON.parse(result!);
+  return { model, modelResponseObject };
+  // return { result }
 }
