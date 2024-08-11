@@ -1,12 +1,12 @@
 # 🤖 SUPER FUNDING-AI
 
-💰 Project Entry to ETHGLobal Superhack 2024
+💰 Project Entry to ETHGlobal Superhack 2024
 
 ## Description of Project
 
 SUPER FUNDING-AI allows anyone on Celo Minipay app to raise funding for investment, particularly first-time entrepreneurs, people seeking microfunding, and even web3 DAO treasuries. A problem for many of these groups is a lack of track record and investment history, and investors are wary of putting funds into projects in one go. SUPER Funding-AI allows investment to be split into stages with funds released upon conditions being met. To avoid any bias, these conditions are verified using an AI LLM which makes attestations on-chain wia EAS.
 
-## Technologies used
+## Superhack partner technologies used
 
 * Celo Minipay
 * EAS
